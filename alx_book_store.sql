@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS Orders (
 ) ENGINE=InnoDB;
 
 
+
 -- Create Order_Details table
 CREATE TABLE IF NOT EXISTS Order_Details (
     orderdetail_id INT AUTO_INCREMENT PRIMARY KEY,
