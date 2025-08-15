@@ -31,16 +31,13 @@ CREATE TABLE Customers (
 
 
 
-CREATE TABLE IF NOT EXISTS Orders (
+CREATE TABLE Orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT NOT NULL,
     order_date DATE,
-    CONSTRAINT fk_customer
-        FOREIGN KEY (customer_id)
-        REFERENCES Customers(customer_id)
-        ON DELETE CASCADE
-        ON UPDATE CASCADE
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 ) ENGINE=InnoDB;
+
 
 
 
