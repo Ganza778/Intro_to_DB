@@ -39,22 +39,12 @@ CREATE TABLE Orders (
 ) ENGINE=InnoDB;
 
 
-
-
--- Create Order_Details table
-CREATE TABLE IF NOT EXISTS Order_Details (
+CREATE TABLE Order_Details (
     orderdetail_id INT AUTO_INCREMENT PRIMARY KEY,
-    order_id INT,
-    book_id INT,
+    order_id INT NOT NULL,
+    book_id INT NOT NULL,
     quantity DOUBLE,
-    CONSTRAINT fk_order
-        FOREIGN KEY (order_id)
-        REFERENCES Orders(order_id)
-        ON DELETE CASCADE
-        ON UPDATE CASCADE,
-    CONSTRAINT fk_book
-        FOREIGN KEY (book_id)
-        REFERENCES Books(book_id)
-        ON DELETE CASCADE
-        ON UPDATE CASCADE
-);
+    FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+    FOREIGN KEY (book_id) REFERENCES Books(book_id)
+) ENGINE=InnoDB;
+
