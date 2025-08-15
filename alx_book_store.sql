@@ -22,12 +22,13 @@ CREATE TABLE IF NOT EXISTS Books (
         ON UPDATE CASCADE
 );
 
-CREATE TABLE Orders (
-    order_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_id INT NOT NULL,
-    order_date DATE,
-    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+CREATE TABLE Customers (
+    customer_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_name VARCHAR(215),
+    email VARCHAR(215),
+    address TEXT
 ) ENGINE=InnoDB;
+
 
 
 CREATE TABLE IF NOT EXISTS Orders (
